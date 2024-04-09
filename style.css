@@ -36,3 +36,11 @@ h1{
     margin: 1em 1em 1em 1em;
 }
 
+p{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+

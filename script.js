@@ -105,8 +105,6 @@
     function timer(){
       seconds--
       timerDisplay.textContent = seconds;
-      if(seconds <= 0){
-        alert ("tempo scaduto")
-      } return
+      
     }
     setInterval(timer, 1000)
