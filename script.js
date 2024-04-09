@@ -110,3 +110,18 @@
       } return
     }
     setInterval(timer, 1000)
+
+
+  //welcome page
+//DA SISTEMARE. L'alert mi esce solo quando ricarico la pagina, chiaramente qualcosa non va ma non ho ancora capito dove
+  
+ 
+function inizioQuiz() {
+document.getElementById("submit").addEventListener("click",inizioQuiz)
+{ 
+    if(document.getElementById("consent").checked) {
+        window.location.href = pagina_quiz.html //messo a caso per ora
+    } else {
+        alert("Devi spuntare la casella per proseguire!")
+    }
+  }
