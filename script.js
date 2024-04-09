@@ -117,9 +117,10 @@
   
  
 function inizioQuiz() {
+let condizioneAccettata = document.getElementById("consent")
 document.getElementById("submit").addEventListener("click",inizioQuiz)
 { 
-    if(document.getElementById("consent").checked) {
+    if(condizioneAccettata.checked) {
         window.location.href = pagina_quiz.html //messo a caso per ora
     } else {
         alert("Devi spuntare la casella per proseguire!")
