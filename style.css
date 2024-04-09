@@ -1,0 +1,38 @@
+body {
+    background-image: url(assets/bg.jpg);
+    background-size: cover;
+    color: white;
+}
+
+img {
+    width: 20%;
+    height: auto;
+    
+}
+
+#logoTimer {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+}
+
+h1{
+    font-family: "Outfit", sans-serif; 
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#buttonsContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons{
+    margin: 1em 1em 1em 1em;
+}
+
