@@ -124,3 +124,4 @@ document.getElementById("submit").addEventListener("click",inizioQuiz)
         alert("Devi spuntare la casella per proseguire!")
     }
   }
+}
