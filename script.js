@@ -147,12 +147,66 @@ function domandaUno(){
       }
       setInterval(countdown, 1000)
 
+  const title = document.createElement("h1")
+  title.textContent = "What does CPU stand for?"
+  document.body.appendChild(title)
+
   const buttonsContainer = document.createElement("div")
   buttonsContainer.id = "buttonsContainer"
   document.body.appendChild(buttonsContainer)
 
-  const buttons = document.getElementById("buttonsContainer")
-  
-  
-  
+  const input1 = document.createElement("input")
+  input1.type = "radio"
+  input1.id = "choice1"
+  input1.name = "choice"
+
+  const label1 = document.createElement("label")
+  label1.textContent = "Central Processing Unit"
+  label1.setAttribute("for","choice1")
+
+  buttonsContainer.appendChild(input1)
+  buttonsContainer.appendChild(label1)
+
+  const input2 = document.createElement("input")
+  input2.type = "radio"
+  input2.id = "choice2"
+  input2.name = "choice"
+
+  const label2 = document.createElement("label")
+  label2.textContent = "Central Process Unit"
+  label2.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input2)
+  buttonsContainer.appendChild(label2)
+
+  const input3 = document.createElement("input")
+  input3.type = "radio"
+  input3.id = "choice2"
+  input3.name = "choice"
+
+  const label3 = document.createElement("label")
+  label3.textContent = "Computer Personal Unit"
+  label3.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input3)
+  buttonsContainer.appendChild(label3)
+
+  const input4 = document.createElement("input")
+  input4.type = "radio"
+  input4.id = "choice2"
+  input4.name = "choice"
+
+  const label4 = document.createElement("label")
+  label4.textContent = "Central Processor Unit"
+  label4.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input4)
+  buttonsContainer.appendChild(label4)
+
+  const submit = document.createElement("input")
+  submit.type = "submit"
+  submit.id = "submit"
+
+  document.body.appendChild(submit)
+
 }
