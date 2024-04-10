@@ -127,3 +127,13 @@ function inizioQuiz() {
             alert("Devi spuntare la casella per proseguire!")
         }
       }
+
+//creazione del quiz
+
+/*requisiti:
+- variabile globale per il punteggio dell'utente
+- variabile questionNumber per tenere traccia del numero/posizione della domanda presentata all'utente
+- quando questionNumber è maggiore delle domande disponibili l'applicazione dovrà mostrare il risultato*/
+
+
+
