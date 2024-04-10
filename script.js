@@ -111,17 +111,15 @@
 
 
   //welcome page
-//DA SISTEMARE. L'alert mi esce solo quando ricarico la pagina, chiaramente qualcosa non va ma non ho ancora capito dove
-  
- 
-function inizioQuiz() {
-let condizioneAccettata = document.getElementById("consent")
-document.getElementById("submit").addEventListener("click",inizioQuiz)
-{ 
-    if(condizioneAccettata.checked) {
-        window.location.href = pagina_quiz.html //messo a caso per ora
-    } else {
-        alert("Devi spuntare la casella per proseguire!")
-    }
-  }
-}
+//SISTEMATO!!!
+
+ let consentCheckbox= document.getElementById("consentCheckbox")
+ let proceed = document.getElementById("submitButton")
+document.getElementById("submitButton").addEventListener("click",pagSuccessiva)
+  function inizioQuiz() {
+        if(consentCheckbox.checked) {
+            window.location.href = pagina_quiz.html //messo a caso per ora
+        } else {
+            alert("Devi spuntare la casella per proseguire!")
+        }
+      }
