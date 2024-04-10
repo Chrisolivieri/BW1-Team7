@@ -143,6 +143,8 @@ function domandaUno(){
         timerDisplay.textContent = seconds;
         if(seconds === 0){
           alert ("tempo scaduto")
+          svuotaPagina()
+          domandaDue()
         } return
       }
       setInterval(countdown, 1000)
@@ -210,3 +212,171 @@ function domandaUno(){
   document.body.appendChild(submit)
 
 }
+
+
+
+function domandaDue(){
+  const divLogo = document.createElement("div")
+  divLogo.id = "logoTimer"
+  document.body.appendChild(divLogo)
+
+  const containerLogo = document.getElementById("logoTimer")
+  const logo = document.createElement("img")
+  logo.src = "assets/epicode_logo.png"
+  containerLogo.appendChild(logo)
+
+  const containerTimer = document.getElementById("logoTimer")
+  const timer = document.createElement("div")
+  timer.id = "timer"
+  timer.textContent = "25";
+  containerTimer.appendChild(timer);
+  const timerDisplay = document.getElementById('timer')
+
+  let seconds = 25
+  
+      function countdown(){
+        seconds--
+        timerDisplay.textContent = seconds;
+        if(seconds === 0){
+          alert ("tempo scaduto")
+          svuotaPagina()
+          domandaTre()
+        } return
+      }
+      setInterval(countdown, 1000)
+
+  const title = document.createElement("h1")
+  title.textContent = "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?"
+  document.body.appendChild(title)
+
+  const buttonsContainer = document.createElement("div")
+  buttonsContainer.id = "buttonsContainer"
+  document.body.appendChild(buttonsContainer)
+
+  const input1 = document.createElement("input")
+  input1.type = "radio"
+  input1.id = "choice1"
+  input1.name = "choice"
+
+  const label1 = document.createElement("label")
+  label1.textContent = "Final"
+  label1.setAttribute("for","choice1")
+
+  buttonsContainer.appendChild(input1)
+  buttonsContainer.appendChild(label1)
+
+  const input2 = document.createElement("input")
+  input2.type = "radio"
+  input2.id = "choice2"
+  input2.name = "choice"
+
+  const label2 = document.createElement("label")
+  label2.textContent = "Static"
+  label2.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input2)
+  buttonsContainer.appendChild(label2)
+
+  const input3 = document.createElement("input")
+  input3.type = "radio"
+  input3.id = "choice2"
+  input3.name = "choice"
+
+  const label3 = document.createElement("label")
+  label3.textContent = "Private"
+  label3.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input3)
+  buttonsContainer.appendChild(label3)
+
+  const input4 = document.createElement("input")
+  input4.type = "radio"
+  input4.id = "choice2"
+  input4.name = "choice"
+
+  const label4 = document.createElement("label")
+  label4.textContent = "Public"
+  label4.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input4)
+  buttonsContainer.appendChild(label4)
+
+  const submit = document.createElement("input")
+  submit.type = "submit"
+  submit.id = "submit"
+
+  document.body.appendChild(submit)
+  
+}
+
+
+
+function domandaTre(){
+  const divLogo = document.createElement("div")
+  divLogo.id = "logoTimer"
+  document.body.appendChild(divLogo)
+
+  const containerLogo = document.getElementById("logoTimer")
+  const logo = document.createElement("img")
+  logo.src = "assets/epicode_logo.png"
+  containerLogo.appendChild(logo)
+
+  const containerTimer = document.getElementById("logoTimer")
+  const timer = document.createElement("div")
+  timer.id = "timer"
+  timer.textContent = "25";
+  containerTimer.appendChild(timer);
+  const timerDisplay = document.getElementById('timer')
+
+  let seconds = 25
+  
+      function countdown(){
+        seconds--
+        timerDisplay.textContent = seconds;
+        if(seconds === 0){
+          alert ("tempo scaduto")
+          svuotaPagina()
+        } return
+      }
+      setInterval(countdown, 1000)
+
+  const title = document.createElement("h1")
+  title.textContent = "The logo for Snapchat is a Bell."
+  document.body.appendChild(title)
+
+  const buttonsContainer = document.createElement("div")
+  buttonsContainer.id = "buttonsContainer"
+  document.body.appendChild(buttonsContainer)
+
+  const input1 = document.createElement("input")
+  input1.type = "radio"
+  input1.id = "choice1"
+  input1.name = "choice"
+
+  const label1 = document.createElement("label")
+  label1.textContent = "True"
+  label1.setAttribute("for","choice1")
+
+  buttonsContainer.appendChild(input1)
+  buttonsContainer.appendChild(label1)
+
+  const input2 = document.createElement("input")
+  input2.type = "radio"
+  input2.id = "choice2"
+  input2.name = "choice"
+
+  const label2 = document.createElement("label")
+  label2.textContent = "False"
+  label2.setAttribute("for","choice2")
+
+  buttonsContainer.appendChild(input2)
+  buttonsContainer.appendChild(label2)
+
+  const submit = document.createElement("input")
+  submit.type = "submit"
+  submit.id = "submit"
+
+  document.body.appendChild(submit)
+  
+}
+
