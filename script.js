@@ -1,4 +1,4 @@
-    const questions = [
+const questions = [
       {
         category: "Science: Computers",
         type: "multiple",
@@ -98,28 +98,61 @@
       },
     ];
 
-    const timerDisplay = document.getElementById('timer')
+let punteggioUtente = 0
+let questionNumber = 0
 
-    let seconds = 25
+const consentCheckbox = document.getElementById("consent");
+const proceed = document.getElementById("button");
 
-    function timer(){
-      seconds--
-      timerDisplay.textContent = seconds;
-      
+
+function inizioQuiz() {
+    if (consentCheckbox.checked) {
+        svuotaPagina()
+        domandaUno()
+    } else {
+        alert("Devi spuntare la casella per proseguire!")
     }
-    setInterval(timer, 1000)
+}
 
+function svuotaPagina() {
+    const emptyPage = document.getElementsByTagName("body")[0]
+    emptyPage.innerHTML = "";  
+}
 
-  //welcome page
-//SISTEMATO!!!
+function domandaUno(){
+  const divLogo = document.createElement("div")
+  divLogo.id = "logoTimer"
+  document.body.appendChild(divLogo)
 
- let consentCheckbox= document.getElementById("consentCheckbox")
- let proceed = document.getElementById("submitButton")
-document.getElementById("submitButton").addEventListener("click",pagSuccessiva)
-  function inizioQuiz() {
-        if(consentCheckbox.checked) {
-            window.location.href = pagina_quiz.html //messo a caso per ora
-        } else {
-            alert("Devi spuntare la casella per proseguire!")
-        }
+  const containerLogo = document.getElementById("logoTimer")
+  const logo = document.createElement("img")
+  logo.src = "assets/epicode_logo.png"
+  containerLogo.appendChild(logo)
+
+  const containerTimer = document.getElementById("logoTimer")
+  const timer = document.createElement("div")
+  timer.id = "timer"
+  timer.textContent = "25";
+  containerTimer.appendChild(timer);
+  const timerDisplay = document.getElementById('timer')
+
+  let seconds = 25
+  
+      function countdown(){
+        seconds--
+        timerDisplay.textContent = seconds;
+        if(seconds === 0){
+          alert ("tempo scaduto")
+        } return
       }
+      setInterval(countdown, 1000)
+
+  const buttonsContainer = document.createElement("div")
+  buttonsContainer.id = "buttonsContainer"
+  document.body.appendChild(buttonsContainer)
+
+  const buttons = document.getElementById("buttonsContainer")
+  
+  
+  
+}
