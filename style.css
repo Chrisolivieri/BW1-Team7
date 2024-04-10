@@ -14,9 +14,10 @@ img {
     display: flex;
     justify-content: space-between;
     margin: 2em;
-}
+} 
 
-h1{
+
+ h1{
     font-family: "Outfit", sans-serif; 
     position: absolute;
     top: 30%;
@@ -24,6 +25,7 @@ h1{
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 
 #buttonsContainer{
     position: absolute;
@@ -36,11 +38,17 @@ h1{
     margin: 1em 1em 1em 1em;
 }
 
-p{
+/* p{
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+*/
 
-
+#submit{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
