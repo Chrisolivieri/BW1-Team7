@@ -100,6 +100,7 @@ const questions = [
 
 let punteggioUtente = 0
 let questionNumber = 0
+const correctAnswers = questions.map(question => question.correct_answer)
 
 const consentCheckbox = document.getElementById("consent");
 const proceed = document.getElementById("button");
@@ -142,7 +143,6 @@ function domandaUno(){
         seconds--
         timerDisplay.textContent = seconds;
         if(seconds === 0){
-          alert ("tempo scaduto")
           svuotaPagina()
           domandaDue()
         } return
@@ -216,12 +216,14 @@ function domandaUno(){
   send.addEventListener("click", function() {
     if (input1.checked || input2.checked || input3.checked || input4.checked) {
         svuotaPagina()
-        domandaDue();
+        domandaDue()
     } else {
-        alert("Seleziona una risposta prima di procedere.")
+        alert("Seleziona una risposta prima di procedere")
+        
     }
+    
 })
-
+console.log(punteggioUtente)
 }
 
 
