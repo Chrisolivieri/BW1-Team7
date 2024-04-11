@@ -215,15 +215,16 @@ function domandaUno(){
   const send = document.getElementById("submit")
   send.addEventListener("click", function() {
     if (input1.checked || input2.checked || input3.checked || input4.checked) {
+      if(input1.checked){         //risposta corretta impostata a mano
+        punteggioUtente++
+      }
         svuotaPagina()
         domandaDue()
+        console.log(punteggioUtente)
     } else {
         alert("Seleziona una risposta prima di procedere")
-        
-    }
-    
-})
-console.log(punteggioUtente)
+    }  
+  })
 }
 
 
