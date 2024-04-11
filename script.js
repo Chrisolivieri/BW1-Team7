@@ -183,24 +183,24 @@ function domandaUno(){
 
   const input3 = document.createElement("input")
   input3.type = "radio"
-  input3.id = "choice2"
+  input3.id = "choice3"
   input3.name = "choice"
 
   const label3 = document.createElement("label")
   label3.textContent = "Computer Personal Unit"
-  label3.setAttribute("for","choice2")
+  label3.setAttribute("for","choice3")
 
   buttonsContainer.appendChild(input3)
   buttonsContainer.appendChild(label3)
 
   const input4 = document.createElement("input")
   input4.type = "radio"
-  input4.id = "choice2"
+  input4.id = "choice4"
   input4.name = "choice"
 
   const label4 = document.createElement("label")
   label4.textContent = "Central Processor Unit"
-  label4.setAttribute("for","choice2")
+  label4.setAttribute("for","choice4")
 
   buttonsContainer.appendChild(input4)
   buttonsContainer.appendChild(label4)
@@ -210,6 +210,17 @@ function domandaUno(){
   submit.id = "submit"
 
   document.body.appendChild(submit)
+
+
+  const send = document.getElementById("submit")
+  send.addEventListener("click", function() {
+    if (input1.checked || input2.checked || input3.checked || input4.checked) {
+        svuotaPagina()
+        domandaDue();
+    } else {
+        alert("Seleziona una risposta prima di procedere.")
+    }
+})
 
 }
 
@@ -279,24 +290,24 @@ function domandaDue(){
 
   const input3 = document.createElement("input")
   input3.type = "radio"
-  input3.id = "choice2"
+  input3.id = "choice3"
   input3.name = "choice"
 
   const label3 = document.createElement("label")
   label3.textContent = "Private"
-  label3.setAttribute("for","choice2")
+  label3.setAttribute("for","choice3")
 
   buttonsContainer.appendChild(input3)
   buttonsContainer.appendChild(label3)
 
   const input4 = document.createElement("input")
   input4.type = "radio"
-  input4.id = "choice2"
+  input4.id = "choice4"
   input4.name = "choice"
 
   const label4 = document.createElement("label")
   label4.textContent = "Public"
-  label4.setAttribute("for","choice2")
+  label4.setAttribute("for","choice4")
 
   buttonsContainer.appendChild(input4)
   buttonsContainer.appendChild(label4)
