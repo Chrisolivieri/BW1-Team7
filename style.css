@@ -1,23 +1,73 @@
-body {
+body{
+    font-family: "Outfit", sans-serif; 
+    padding-top: 30px;
+    padding-left: 60px;
     background-image: url(assets/bg.jpg);
-    background-size: cover;
+    background-size: cover ;
     color: white;
+
 }
 
-img {
-    width: 20%;
-    height: auto;
-    
-}
+#title  {
+    font-size: 50pt;
 
+}
 #logoTimer {
     display: flex;
     justify-content: space-between;
     margin: 2em;
 } 
 
+#intro img {
+    max-width: 150px;
+}
 
- h1{
+img {
+    max-width: 150px;
+}
+
+h2 {
+    font-size: 20pt;
+    color: #D20094;
+}
+
+#instructions{
+    margin-bottom: 55px;
+}
+#instructions li {
+    padding-bottom: 10px;
+    font-style: normal;
+}
+
+
+#bottoni {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+
+}
+
+#button1:hover {
+    box-shadow: 0px 0px 17px 15px rgba(90,231,250,0.75);
+    transition: box-shadow 1s;
+    border-radius: box-shadow 10px;
+}
+
+#button1 {
+    margin-left: 35em;
+    width: 180px;
+    height: 50px;
+    background-color: aqua;
+    color: black;
+    border: none;
+    font-size: 16pt;
+   font-family: "Outfit", sans-serif;
+   font-weight: bold;
+   
+
+}
+
+#Question {
     font-family: "Outfit", sans-serif; 
     position: absolute;
     top: 30%;
@@ -26,29 +76,32 @@ img {
     text-align: center;
 }
 
-
 #buttonsContainer{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+    
 }
 
 .buttons{
     margin: 1em 1em 1em 1em;
 }
 
-/* p{
+#submit{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#currentQuestion{
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-*/
 
-#submit{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
+  
