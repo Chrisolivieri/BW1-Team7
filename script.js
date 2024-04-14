@@ -176,7 +176,7 @@ function renderQuestion() {
 
 
   // mettiamo risposte alle domande
-  let answers = currentQuestion.incorrect_answers;
+  let answers = currentQuestion.incorrect_answers
   answers.push(currentQuestion.correct_answer)
 
 
