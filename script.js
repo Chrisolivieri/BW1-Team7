@@ -109,6 +109,8 @@ let seconds
 
 const consentCheckbox = document.getElementById("consent")
 const proceed = document.getElementById("button")
+const quizBox = document.querySelector("#quiz-section")
+const resultBox = document.querySelector(".result-box")
 
 
 function inizioQuiz() {
@@ -195,9 +197,10 @@ function renderQuestion() {
       }
 
       if (quizfinito >= 10) {
-        alert("Fine quiz")
-        alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
-        refreshQuiz()
+        svuotaPagina2()
+        showResults()
+        //alert("Fine quiz")
+        //alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
 
       } else {
 
@@ -210,5 +213,28 @@ function renderQuestion() {
   img.src = "assets/epicode_logo.png"
   img.id = "logoEpicode"
   logoEpicode.appendChild(img)
+
+}
+
+function showResults() {
+quizBox.innerHTML = resultBox.innerHTML
+  const scoreText = document.querySelector(".score-text")
+  scoreText.textContent = `Your Score is ${punteggioUtente} out ${questions.length}`;
+
+  const circularProgress = document.querySelector(".circular-progress");
+  const progressValue = document.querySelector(".progress-value");
+  let progressStartValue = -1;
+  let progressEndValue = (punteggioUtente / questions.length) * 100;
+  let speed = 20;
+
+  let progress = setInterval(() => {
+    progressStartValue++
+
+    progressValue.textContent = `${progressStartValue}%`;
+
+    if(progressStartValue === progressEndValue) {
+      clearInterval(progress)
+    }
+  }, speed);
 
 }
