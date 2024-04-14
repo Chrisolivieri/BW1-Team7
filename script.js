@@ -125,9 +125,8 @@ function svuotaPagina() {
   emptyPage.innerHTML = "";
 }
 
-function svuotaPagina2() {
-  const emptyPage = document.getElementsByTagName("body")[0]
-  emptyPage.innerHTML = "";
+function refreshQuiz() {
+  window.location.reload(true)
 }
 
 function countDown() {
@@ -146,7 +145,7 @@ function countDown() {
   if (domandaCorrente === 10) {
     alert("Fine quiz")
     alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
-    svuotaPagina2()
+    refreshQuiz()
 
   }
 }
@@ -198,7 +197,7 @@ function renderQuestion() {
       if (quizfinito >= 10) {
         alert("Fine quiz")
         alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
-        svuotaPagina2()
+        refreshQuiz()
 
       } else {
 
