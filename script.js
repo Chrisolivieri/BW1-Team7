@@ -104,10 +104,11 @@ let currentQuestionIndex = 0
 let quizfinito = 0
 let risposteSbagliate = 0
 let domandaCorrente = 1
+let seconds
 
 
-const consentCheckbox = document.getElementById("consent");
-const proceed = document.getElementById("button");
+const consentCheckbox = document.getElementById("consent")
+const proceed = document.getElementById("button")
 
 
 function inizioQuiz() {
@@ -123,8 +124,33 @@ function svuotaPagina() {
     const emptyPage = document.getElementById("start")
     emptyPage.innerHTML = "";  
 }
+
+function countDown(){
+  let timer = document.getElementById("timer")
+
+  clearInterval(seconds)
+  let count = 25
+  seconds = setInterval(function(){
+    timer.textContent = count
+    if(count <=0 ){
+      clearInterval(seconds)
+      endCountdown()
+    }
+    count--
+  },1000)
+  if(domandaCorrente === 10){
+    alert("Fine quiz")
+  }
+}
+
+
+function endCountdown(){
+  alert("Tempo Scaduto!")
+  renderQuestion()
+}
+
 function renderQuestion() {
-  
+  countDown()
   if (quizfinito > 0) {
       currentQuestionIndex++
       domandaCorrente++
@@ -134,14 +160,18 @@ function renderQuestion() {
   let currentQuestion = questions[currentQuestionIndex]
    
   //mostriamo la domanda
-  domanda.innerHTML = currentQuestion.question;
-  numeroDomande.innerHTML = "QUESTION " + domandaCorrente + " /10"
+  domanda.innerHTML = currentQuestion.question
+
+  numeroDomande.innerHTML = "QUESTION " + domandaCorrente + "<span style='color: #6B2973;'> /10</span>"
 
   risposte.innerHTML = ''
+  
+
 
   // mettiamo risposte alle domande
   let answers = currentQuestion.incorrect_answers;
   answers.push(currentQuestion.correct_answer)
+  
 
   //per ogni domanda mettiamo un bottone
   for (let i = 0; i < answers.length; i++) {
@@ -160,10 +190,16 @@ function renderQuestion() {
           if (quizfinito >= 10) {
               alert("Fine quiz")
           } else {
+            
               renderQuestion()
           }
       })
   }
+  let img = document.createElement("img")
+  img.src ="assets/epicode_logo.png"
+  img.id = "logoEpicode"
+  logoEpicode.appendChild(img)
+  
 }
 
 
