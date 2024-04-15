@@ -25,9 +25,9 @@ function mostraAvviso() {
 
 //collegamento pagina 
 
-function navigaAPagina() {
+function navigaAPagina1() {
 
-    window.location.href = "index.html";
+    window.location.href = "rating.html";
 }
 
 //invio valutazione
