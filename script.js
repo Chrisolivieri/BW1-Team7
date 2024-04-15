@@ -128,10 +128,9 @@ function svuotaPagina() {
 }
 
 function svuotaPagina2() {
-  const emptyPage = document.getElementsByTagName("body")[0]
+  const emptyPage = document.getElementById("contenitoreDomande")
   emptyPage.innerHTML = "";
 }
-
 
 
 function refreshQuiz() {
@@ -151,12 +150,14 @@ function countDown() {
     }
     count--
   }, 1000)
-  if (domandaCorrente === 10) {
-    alert("Fine quiz")
-    alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
-    refreshQuiz()
 
-  }
+  if (domandaCorrente === 10) {
+    clearInterval(seconds)
+    alert("Fine quiz")
+    //alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
+    showResults()
+
+  } 
 }
 
 
@@ -204,7 +205,6 @@ function renderQuestion() {
       }
 
       if (quizfinito >= 10) {
-
         showResults()
         //alert("Fine quiz")
         //alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
@@ -224,9 +224,18 @@ function renderQuestion() {
 }
 
 function showResults() {
-quizBox.innerHTML = resultBox.innerHTML
+  clearInterval(seconds)
+  svuotaPagina2()
+  
+  let buttonElement = document.createElement("button")
+  buttonElement.textContent = "Rate us!"
+  buttonElement.id = "rate"
+  rate.appendChild(buttonElement)
+ 
+ quizBox.innerHTML = resultBox.innerHTML
   const scoreText = document.querySelector(".score-text")
   scoreText.textContent = `Your Score is ${punteggioUtente} out ${questions.length}`;
+
 
   const circularProgress = document.querySelector(".circular-progress");
   const progressValue = document.querySelector(".progress-value");
@@ -243,5 +252,48 @@ quizBox.innerHTML = resultBox.innerHTML
       clearInterval(progress)
     }
   }, speed);
-
 }
+
+const stars= document.querySelectorAll(".stars i");
+console.log(stars);
+
+
+stars.forEach((star, index1) => {
+  star.addEventListener("click", () => {
+      const isActive = star.classList.contains("active");
+
+      if (isActive) {
+         
+          for (let i = 0; i <= index1; i++) {
+              stars[i].classList.remove("active");
+          }
+      } else {
+          
+          for (let i = 0; i <= index1; i++) {
+              stars[i].classList.add("active");
+          }
+      }
+  });
+});
+
+
+
+
+
+
+
+
+//collegamento pagina 
+
+function navigaAPagina1() {
+
+    window.location.href = "rating.html";
+}
+
+//invio valutazione
+function navigaAPagina() {
+
+    window.location.href = "grazie.html";
+}
+
+
