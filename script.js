@@ -127,6 +127,13 @@ function svuotaPagina() {
   emptyPage.innerHTML = "";
 }
 
+function svuotaPagina2() {
+  const emptyPage = document.getElementsByTagName("body")[0]
+  emptyPage.innerHTML = "";
+}
+
+
+
 function refreshQuiz() {
   window.location.reload(true)
 }
@@ -197,7 +204,7 @@ function renderQuestion() {
       }
 
       if (quizfinito >= 10) {
-        svuotaPagina2()
+
         showResults()
         //alert("Fine quiz")
         //alert("Risposte corrette : " + punteggioUtente + " Risposte sbagliate : " + risposteSbagliate)
